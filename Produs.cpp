@@ -40,3 +40,8 @@ void Produs::setNumeProdus(string numeProdus)
 {
 	this->numeProdus = numeProdus;
 }
+
+void Produs::setPretProdus(float pretProdus)
+{
+	this->pretProdus = pretProdus;
+}

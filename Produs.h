@@ -16,5 +16,6 @@ public:
 	string getNumeProdus();
 	float getPretProdus();
 	void setNumeProdus(string numeProdus);
+	void setPretProdus(float pretProdus);
 };
 
