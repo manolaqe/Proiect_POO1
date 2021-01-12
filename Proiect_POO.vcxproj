@@ -141,13 +141,17 @@
   <ItemGroup>
     <ClInclude Include="Client.h" />
     <ClInclude Include="Magazin.h" />
+    <ClInclude Include="Produs.h" />
     <ClInclude Include="Utilizator.h" />
+    <ClInclude Include="Wrapper.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Magazin.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Produs.cpp" />
     <ClCompile Include="Utilizator.cpp" />
+    <ClCompile Include="Wrapper.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
