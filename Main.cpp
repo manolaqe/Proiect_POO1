@@ -2,17 +2,30 @@
 #include "Magazin.h"
 #include <map>
 #include "Wrapper.h"
+#include "Client.h"
+
 using namespace std;
 
 void main()
 {
 	map<int, Wrapper> stocProduse;
 	Magazin magazin(1, "123", stocProduse);
-	magazin.afiseazaProduse();
+
 	magazin.adaugaProdus(100, "Paine", 2.0f, 5);
-	magazin.afiseazaProduse();
+	magazin.adaugaProdus(101, "Lapte", 4.0f, 10);
+
 	magazin.modificaProdus(100, 1.0f);
+	cout << "produse din stoc: " << endl << endl;;
 	magazin.afiseazaProduse();
-	magazin.stergeProdus(100);
+
+	cout <<endl<< "produse din cos: " << endl;
+
+	Client client(2, "234", "sff", "sfd", "sdfsf");
+	client.adaugaProdusinCos(magazin.returnProdus(100), 2);
+	client.adaugaProdusinCos(magazin.returnProdus(101), 3);
+	client.stergeProdusdinCos(magazin.returnProdus(100), 1);
+	client.afiseazaCos();
+	magazin.plasareComanda(client.plaseazaComanda());
+	cout << endl << "magazin actualizat dupa comanda: " << endl;
 	magazin.afiseazaProduse();
 }

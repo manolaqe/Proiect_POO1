@@ -18,5 +18,11 @@ public:
 
 	void modificaProdus(int, string);
 	void modificaProdus(int idProdus, float pretProdus);
+
+	Produs returnProdus(int);
+	
+	void plasareComanda(map<int, Wrapper>);
+
+//	void raportComenzi();
 };
 

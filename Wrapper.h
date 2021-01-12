@@ -17,6 +17,8 @@ public:
 	
 	int getCantitateProdus();
 
+	void setCantitateProdus(int);
+
 	friend ostream& operator<<(ostream& iesire, Wrapper& w);
 
 };
