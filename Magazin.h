@@ -2,13 +2,16 @@
 #include "Utilizator.h"
 #include <map>
 #include "Wrapper.h"
+#include "Comanda.h"
+#include <vector>
 
 class Magazin: public Utilizator
 {
 protected:
 	map<int, Wrapper> stocProduse;
+	vector<Comanda> comenziEfectuate;
 public:
-	Magazin(int, string, map<int, Wrapper>);
+	Magazin(int, string);
 
 	void afiseazaProduse();
 
@@ -21,7 +24,9 @@ public:
 
 	Produs returnProdus(int);
 	
-	void plasareComanda(map<int, Wrapper>);
+	void plasareComanda(Comanda);
+
+	void afisareComenzi();
 
 //	void raportComenzi();
 };

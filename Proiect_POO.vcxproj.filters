@@ -30,6 +30,12 @@
     <ClInclude Include="Produs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Comanda.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Curieri.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Utilizator.cpp">
@@ -48,6 +54,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Produs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Comanda.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

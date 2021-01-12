@@ -1,9 +1,9 @@
 #include "Magazin.h"
 
 
-Magazin::Magazin(int username, string parola, map<int, Wrapper> stocProduse): Utilizator(username, parola)
+Magazin::Magazin(int username, string parola): Utilizator(username, parola)
 {
-	this->stocProduse.insert(stocProduse.begin(), stocProduse.end());
+	
 }
 
 void Magazin::afiseazaProduse()
@@ -46,14 +46,24 @@ Produs Magazin::returnProdus(int idProdus)
 	return itReturnare->second.produs;
 }
 
-void Magazin::plasareComanda(map<int, Wrapper> cosProduse)
+void Magazin::plasareComanda(Comanda comanda)
 {
+	map<int, Wrapper> comandaCos = comanda.produseComandate;
+	comenziEfectuate.push_back(comanda);
+
 	map<int, Wrapper>::iterator itStoc = stocProduse.begin();
-	map<int, Wrapper>::iterator itCos = cosProduse.begin();
-	for (itCos = cosProduse.begin(); itCos != cosProduse.end(); itCos++)
+	map<int, Wrapper>::iterator itCos = comandaCos.begin();
+
+	for (itCos = comandaCos.begin(); itCos != comandaCos.end(); itCos++)
 	{
 		itStoc = stocProduse.find(itCos->first);
 		itStoc->second.setCantitateProdus(itStoc->second.getCantitateProdus() - itCos->second.getCantitateProdus());
 	}
 
+}
+
+void Magazin::afisareComenzi()
+{
+	for (int i = 0; i < comenziEfectuate.size(); i++)
+		cout << comenziEfectuate[i];
 }

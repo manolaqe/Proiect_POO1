@@ -8,8 +8,8 @@ using namespace std;
 
 void main()
 {
-	map<int, Wrapper> stocProduse;
-	Magazin magazin(1, "123", stocProduse);
+	
+	Magazin magazin(1, "123");
 
 	magazin.adaugaProdus(100, "Paine", 2.0f, 5);
 	magazin.adaugaProdus(101, "Lapte", 4.0f, 10);
@@ -28,4 +28,7 @@ void main()
 	magazin.plasareComanda(client.plaseazaComanda());
 	cout << endl << "magazin actualizat dupa comanda: " << endl;
 	magazin.afiseazaProduse();
+
+	cout << endl << "comenzi efectuate: " << endl;
+	magazin.afisareComenzi();
 }

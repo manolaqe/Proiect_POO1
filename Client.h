@@ -5,6 +5,7 @@
 #include "Wrapper.h"
 #include "Magazin.h"
 #include <vector>
+#include "Comanda.h"
 
 using namespace std;
 
@@ -29,7 +30,7 @@ public:
 
 	vector<int> produseinCos();
 
-	map<int, Wrapper> plaseazaComanda();
+	Comanda plaseazaComanda();
 
 //	void raportComanda();
 

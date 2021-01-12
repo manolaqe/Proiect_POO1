@@ -45,7 +45,7 @@ vector<int> Client::produseinCos()
 	return vect1;
 }
 
-map<int, Wrapper> Client::plaseazaComanda()
+Comanda Client::plaseazaComanda()
 {
-	return cosProduse;
+	return Comanda(username, nume, prenume, adresa, cosProduse);
 }
