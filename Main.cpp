@@ -62,7 +62,7 @@ void main()
 		cout << "Numarul de elemente din fisierul selectat este: " << dateStoc.tellg() / sizeof(Wrapper) << endl;
 
 		dateStoc.seekg(ios::beg);
-		Wrapper aux = a;
+		Wrapper aux;
 		dateStoc.read((char*)&aux, sizeof(Wrapper));
 		cout << "Elementele din fisier: ";
 		while (!dateStoc.eof())

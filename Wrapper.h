@@ -21,5 +21,7 @@ public:
 
 	friend ostream& operator<<(ostream& iesire, Wrapper& w);
 
+	Wrapper();
+
 };
 
