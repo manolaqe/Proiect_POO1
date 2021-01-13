@@ -7,7 +7,7 @@ Produs::Produs()
 	this->pretProdus = 10.0f;
 }
 
-Produs::Produs(int idProdus = 100, string numeProdus = "produsNecunoscut", float pretProdus = 10.0f)
+Produs::Produs(int idProdus = 100, const char* numeProdus = "produsNecunoscut", float pretProdus = 10.0f)
 {
 	this->idProdus = idProdus;
 	this->numeProdus = numeProdus;
@@ -26,7 +26,7 @@ int Produs::getIdProdus()
 	return this->idProdus;
 }
 
-string Produs::getNumeProdus()
+const char* Produs::getNumeProdus()
 {
 	return this->numeProdus;
 }
@@ -36,7 +36,7 @@ float Produs::getPretProdus()
 	return this->pretProdus;
 }
 
-void Produs::setNumeProdus(string numeProdus)
+void Produs::setNumeProdus(const char* numeProdus)
 {
 	this->numeProdus = numeProdus;
 }

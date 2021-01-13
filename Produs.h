@@ -6,16 +6,16 @@ class Produs
 {
 protected:
 	int idProdus;
-	string numeProdus;
+	const char* numeProdus;
 	float pretProdus;
 public:
 	Produs();
-	Produs(int, string, float);
+	Produs(int, const char*, float);
 	void operator=(Produs);
 	int getIdProdus();
-	string getNumeProdus();
+	const char* getNumeProdus();
 	float getPretProdus();
-	void setNumeProdus(string numeProdus);
+	void setNumeProdus(const char* numeProdus);
 	void setPretProdus(float pretProdus);
 };
 

@@ -28,11 +28,15 @@ void Wrapper::setCantitateProdus(int cantitateProdus)
 
 Wrapper::Wrapper()
 {
+	Produs p(99, "ProdusNecunoscut", 2.3f);
+	this->produs = p;
+	this->cantitateProdus = 3;
 }
 
 ostream& operator<<(ostream& iesire, Wrapper& w)
 {
-	iesire << "Produs: \n" << "ID: " << w.produs.getIdProdus() << "\n" << "NUME: " << w.produs.getNumeProdus() << "\n" << "PRET: " << w.produs.getPretProdus() << "\nCANTITATE: " << w.getCantitateProdus()<<endl;
+	iesire << " \nProdus:" << "ID: " << w.produs.getIdProdus() << "\n" << "NUME: " << w.produs.getNumeProdus() 
+		<< "\n" << "PRET: " << w.produs.getPretProdus() << "\nCANTITATE: " << w.getCantitateProdus()<<endl;
 
 	return iesire;
 }

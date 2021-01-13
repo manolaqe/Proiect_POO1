@@ -15,7 +15,7 @@ void Magazin::afiseazaProduse()
 	}
 }
 
-void Magazin::adaugaProdus(int idProdus, string numeProdus, float pretProdus, int cantitateProdus)
+void Magazin::adaugaProdus(int idProdus, const char* numeProdus, float pretProdus, int cantitateProdus)
 {
 	stocProduse.insert({ idProdus, Wrapper(Produs(idProdus, numeProdus, pretProdus), cantitateProdus) });
 }
@@ -25,7 +25,7 @@ void Magazin::stergeProdus(int idProdus)
 	stocProduse.erase(idProdus);
 }
 
-void Magazin::modificaProdus(int idProdus, string numeProdus)
+void Magazin::modificaProdus(int idProdus, const char* numeProdus)
 {
 	map<int, Wrapper>::iterator itModificare;
 	itModificare = stocProduse.find(idProdus);

@@ -15,11 +15,11 @@ public:
 
 	void afiseazaProduse();
 
-	void adaugaProdus(int, string, float, int);
+	void adaugaProdus(int, const char*, float, int);
 
 	void stergeProdus(int);
 
-	void modificaProdus(int, string);
+	void modificaProdus(int, const char*);
 	void modificaProdus(int idProdus, float pretProdus);
 
 	Produs returnProdus(int);
