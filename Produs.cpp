@@ -3,20 +3,35 @@
 Produs::Produs()
 {
 	this->idProdus = 100;
-	this->numeProdus = "produsNecunoscut";
+	nrElemNume = strlen("produsNecunoscut");
+	this->numeProdus = new char[strlen("produsNecunoscut") + 1];
+	strcpy_s(this->numeProdus, strlen("produsNecunoscut") + 1 , "produsNecunoscut");
 	this->pretProdus = 10.0f;
 }
 
-Produs::Produs(int idProdus = 100, const char* numeProdus = "produsNecunoscut", float pretProdus = 10.0f)
+Produs::Produs(int idProdus, const char* numeProdus, float pretProdus)
 {
 	this->idProdus = idProdus;
-	this->numeProdus = numeProdus;
+	nrElemNume = strlen(numeProdus);
+	this->numeProdus = new char[strlen(numeProdus) + 1];
+	strcpy_s(this->numeProdus, strlen(numeProdus) + 1, numeProdus); 
 	this->pretProdus = pretProdus;
+}
+
+Produs::Produs(const Produs& p)
+{
+	this->idProdus = p.idProdus;
+	nrElemNume = strlen(p.numeProdus);
+	this->numeProdus = new char[strlen(p.numeProdus) + 1];
+	this->numeProdus = p.numeProdus;
+	this->pretProdus = p.pretProdus;
 }
 
 void Produs::operator=(Produs p)
 {
 	this->idProdus = p.idProdus;
+	nrElemNume = strlen(p.numeProdus);
+	this->numeProdus = new char[strlen(p.numeProdus) + 1];
 	this->numeProdus = p.numeProdus;
 	this->pretProdus = p.pretProdus;
 }
@@ -38,10 +53,17 @@ float Produs::getPretProdus()
 
 void Produs::setNumeProdus(const char* numeProdus)
 {
-	this->numeProdus = numeProdus;
+	nrElemNume = strlen(numeProdus);
+	this->numeProdus = new char[strlen(numeProdus) + 1];
+	strcpy_s(this->numeProdus, strlen(numeProdus) + 1, numeProdus);
 }
 
 void Produs::setPretProdus(float pretProdus)
 {
 	this->pretProdus = pretProdus;
+}
+
+Produs::~Produs()
+{
+	//delete[] numeProdus;
 }

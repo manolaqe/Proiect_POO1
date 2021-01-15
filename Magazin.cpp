@@ -11,13 +11,15 @@ void Magazin::afiseazaProduse()
 	map<int, Wrapper>::iterator itStoc;
 	for (itStoc = stocProduse.begin(); itStoc != stocProduse.end(); itStoc++)
 	{
-		cout << itStoc->first << "\t" << itStoc->second;
+		cout 
+		//	<< itStoc->first << "\t" 
+			<< itStoc->second;
 	}
 }
 
-void Magazin::adaugaProdus(int idProdus, const char* numeProdus, float pretProdus, int cantitateProdus)
+void Magazin::adaugaProdus(Wrapper w)
 {
-	stocProduse.insert({ idProdus, Wrapper(Produs(idProdus, numeProdus, pretProdus), cantitateProdus) });
+	stocProduse.insert({ w.produs.idProdus, w });
 }
 
 void Magazin::stergeProdus(int idProdus)

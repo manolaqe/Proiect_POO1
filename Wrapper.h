@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include "Produs.h"
+#include <fstream>
 
 using namespace std;
 
@@ -12,6 +13,8 @@ public:
 
 public:
 	Wrapper(Produs produs, int cantitateProdus);
+
+	Wrapper(int idProdus, const char* numeProdus, float pretProdus, int cantitateProdus);
 	
 	Produs getProdus();
 	
@@ -23,5 +26,14 @@ public:
 
 	Wrapper();
 
+	Wrapper(const Wrapper& w);
+
+	void serializare(ofstream& out, Wrapper w);
+
+	Wrapper deserializare(ifstream& in);
+
+	friend ifstream& operator>>(ifstream& in, Wrapper& w);
+
+	friend ofstream& operator<<(ofstream& out, Wrapper w);
 };
 

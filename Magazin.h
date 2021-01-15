@@ -15,7 +15,7 @@ public:
 
 	void afiseazaProduse();
 
-	void adaugaProdus(int, const char*, float, int);
+	void adaugaProdus(Wrapper w);
 
 	void stergeProdus(int);
 
