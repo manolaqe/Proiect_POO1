@@ -1,10 +1,21 @@
 #include "Client.h"
 
-Client::Client(int username, string parola, string nume, string prenume, string adresa): Utilizator(username, parola)
+Client::Client(int username, string parola, string nume, string prenume, string adresa)
 {
+	this->username = username;
+	this->parola = parola;
 	this->nume = nume;
 	this->prenume = prenume;
 	this->adresa = adresa;
+}
+
+bool Client::autentificare(int username, string parola)
+{
+	if (this->username == username && this->parola == parola)
+	{
+		cout << "Te-ai autentificat cu succes in modul client, " << this->prenume << " " << this->nume << "!" << endl;
+		return true;
+	}
 }
 
 void Client::adaugaProdusinCos(Produs p, int cantitateProdus)

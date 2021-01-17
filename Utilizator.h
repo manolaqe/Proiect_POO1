@@ -3,6 +3,8 @@
 
 using namespace std;
 
+//interfata
+
 class Utilizator
 {
 protected:
@@ -10,7 +12,6 @@ protected:
 	string parola;
 
 public:
-	Utilizator(int username, string parola);
-	bool autentificare(int username, string parola);
+	virtual bool autentificare(int username, string parola) = 0;
 };
 

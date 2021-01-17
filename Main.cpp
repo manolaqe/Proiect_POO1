@@ -29,8 +29,6 @@ int main()
 {
 	
 	Wrapper aux;
-	vector<Wrapper> vect;
-	//map <int, Wrapper> mapul;
 	/*vector<Wrapper> vectorWrapper = {Wrapper(Produs(100, "Paine franzela", 1.0f), 5),
 		Wrapper(Produs(101, "Lapte 1L", 6.0f), 15), Wrapper(Produs(102, "Paine bagheta", 1.5f), 25), Wrapper(Produs(103, "Pate Ficat Porc 210g", 3.0f), 54),
 		Wrapper(Produs(104, "Ton 300g", 14.0f), 34), Wrapper(Produs(105, "Lamai 1kg", 5.0f), 21), Wrapper(Produs(106, "File de somon 1kg", 30.0f), 12),
@@ -38,19 +36,19 @@ int main()
 		Wrapper(Produs(110, "Unt 180g", 19.5f), 23), Wrapper(Produs(111, "Cafea 500g", 35.6f), 40), Wrapper(Produs(112, "Ceai Tei", 5.0f), 80), 
 		Wrapper(Produs(113, "Zahar 1kg", 7.2f), 34), Wrapper(Produs(114, "Ulei 1L", 12.0f), 12), Wrapper(Produs(115, "Iaurt de baut 350g", 4.0f), 14),
 		Wrapper(Produs(116, "Smantana 500g", 14.0f), 15), Wrapper(Produs(117, "Cartofi 1kg", 3.0f), 100), Wrapper(Produs(118, "Ceapa 1kg", 2.0f), 75),
-		Wrapper(Produs(119, "Sare 500g", 10.0f), 23), Wrapper(Produs(120, "Iaurt natural 350g", 3.5f), 16) };*/
+		Wrapper(Produs(119, "Sare 500g", 10.0f), 23), Wrapper(Produs(120, "Iaurt natural 350g", 3.5f), 16) };
 
 
-	//ofstream dateStoc("dateStoc1.dat", ios::binary);
-	//if (dateStoc.is_open()) {
-	//	for (int i = 0; i < 21; i++)
-	//	{
-	//		dateStoc << vectorWrapper[i];
-	//	}
-	//	dateStoc.close();
-	//}
+	ofstream dateStoc("dateStoc1.dat", ios::binary);
+	if (dateStoc.is_open()) {
+		for (int i = 0; i < 21; i++)
+		{
+			dateStoc << vectorWrapper[i];
+		}
+		dateStoc.close();
+	}*/
 
-	//
+	
 
 	ifstream dateStoc1("dateStoc1.dat", ios::binary);
 	if (dateStoc1.is_open())
@@ -178,7 +176,6 @@ int main()
 				break;
 				}
 				
-				
 			}
 				break;
 			case 4: 
@@ -249,8 +246,9 @@ int main()
 					cout << "\nCantitatea de produs pe care doriti sa o adaugati in cos: " << endl;
 					cin >> cantitate;
 					client.adaugaProdusinCos(magazin.returnProdus(ID), cantitate);
-					cout << "0 Mai adauga un produs" << endl;
-				} while (AlegeOptiune() == 0);
+					cout << "0 Intoarce-te la meniul principal" << endl;
+					cout << "1 Mai adauga un produs" << endl;
+				} while (AlegeOptiune() == 1);
 				
 			}
 			break;
@@ -342,6 +340,7 @@ int main()
 					cout << "Adresa client: " << endl;
 					cin.ignore();
 					getline(cin, adresa);
+					client.setAdresa(adresa);
 				}
 					break;
 				}

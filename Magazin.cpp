@@ -1,7 +1,20 @@
 #include "Magazin.h"
 
 
-Magazin::Magazin(int username, string parola) : Utilizator(username, parola) {}
+Magazin::Magazin(int username, string parola)
+{
+	this->username = username;
+	this->parola = parola;
+}
+
+bool Magazin::autentificare(int username, string parola)
+{
+	if (this->username == username && this->parola == parola)
+	{
+		cout <<"V-ati autentificat cu succes in modul Magazin!" << endl;
+		return true;
+	}
+}
 
 void Magazin::afiseazaProduse()
 {

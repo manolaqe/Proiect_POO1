@@ -13,6 +13,8 @@ protected:
 public:
 	Magazin(int, string);
 
+	bool autentificare(int username, string parola);
+
 	void afiseazaProduse();
 
 	void adaugaProdus(Wrapper w);

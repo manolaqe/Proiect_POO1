@@ -18,7 +18,9 @@ protected:
 	map<int, Wrapper> cosProduse;
 	
 public:
-	Client(int username, string parola, string nume, string prenume, string adresa); 
+	Client(int username, string parola, string nume, string prenume, string adresa);
+	bool autentificare(int username, string parola);
+
 
 	void adaugaProdusinCos(Produs, int);
 
