@@ -24,6 +24,13 @@ void Magazin::stergeProdus(int idProdus)
 	stocProduse.erase(idProdus);
 }
 
+void Magazin::stergeProdus(int idProdus, int cantitate)
+{
+	map<int, Wrapper>::iterator itModificare;
+	itModificare = stocProduse.find(idProdus);
+	itModificare->second.setCantitateProdus(cantitate);
+}
+
 void Magazin::modificaProdus(int idProdus, const char* numeProdus)
 {
 	map<int, Wrapper>::iterator itModificare;
@@ -43,6 +50,13 @@ Produs Magazin::returnProdus(int idProdus)
 	map<int, Wrapper>::iterator itReturnare;
 	itReturnare = stocProduse.find(idProdus);
 	return itReturnare->second.produs;
+}
+
+void Magazin::returnProdusAfisare(int idProdus)
+{
+	map<int, Wrapper>::iterator itReturnare;
+	itReturnare = stocProduse.find(idProdus);
+	cout << itReturnare->second;
 }
 
 void Magazin::plasareComanda(Comanda comanda)
@@ -65,7 +79,7 @@ void Magazin::plasareComanda(Comanda comanda)
 void Magazin::afisareComenzi()
 {
 	for (int i = 0; i < comenziEfectuate.size(); i++)
-		cout << comenziEfectuate[i];
+		cout << i << comenziEfectuate[i];
 }
 
 void Magazin::actualizareStoc()
@@ -92,4 +106,9 @@ void Magazin::actualizareComenzi()
 		}
 		dateStoc.close();
 	}
+}
+
+void Magazin::prelucrareComanda(int index, int curier)
+{
+	this->comenziEfectuate[index].setCurier(curier);
 }

@@ -19,10 +19,14 @@ public:
 
 	void stergeProdus(int);
 
+	void stergeProdus(int idProdus, int cantitate);
+
 	void modificaProdus(int, const char*);
 	void modificaProdus(int idProdus, float pretProdus);
 
 	Produs returnProdus(int);
+
+	void returnProdusAfisare(int idProdus);
 	
 	void plasareComanda(Comanda);
 
@@ -31,6 +35,8 @@ public:
 	void actualizareStoc();
 
 	void actualizareComenzi();
+
+	void prelucrareComanda(int index, int curier);
 
 
 

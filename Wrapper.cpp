@@ -52,7 +52,7 @@ Wrapper::Wrapper(const Wrapper& w)
 ostream& operator<<(ostream& iesire, Wrapper& w)
 {
 	//iesire << "numeProdus.push_back(" << w.produs.getNumeProdus() << ");";
-	iesire << " \nPRODUS:" << w.produs.numeProdus << "\nID: " << w.produs.idProdus << "\n" << "PRET: " << w.produs.pretProdus << "\nCANTITATE: " << w.cantitateProdus << endl;
+	iesire << " \nPRODUS:" << w.produs.numeProdus << "\nID: " << w.produs.idProdus << "\nPRET: " << w.produs.pretProdus << "\nCANTITATE: " << w.cantitateProdus << endl;
 	return iesire;
 }
 
@@ -100,4 +100,10 @@ ofstream& operator<<(ofstream& out, Wrapper w)
 
 	return out;
 
+}
+
+void Wrapper::operator+=(int cantitateProdus)
+{
+	this->cantitateProdus += cantitateProdus;
+	
 }

@@ -32,6 +32,8 @@ public:
 
 	Wrapper deserializare(ifstream& in);
 
+	void operator+=(int cantitateProdus);
+
 	friend ifstream& operator>>(ifstream& in, Wrapper& w);
 
 	friend ofstream& operator<<(ofstream& out, Wrapper w);

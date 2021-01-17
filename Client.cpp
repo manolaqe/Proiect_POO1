@@ -9,19 +9,29 @@ Client::Client(int username, string parola, string nume, string prenume, string 
 
 void Client::adaugaProdusinCos(Produs p, int cantitateProdus)
 {
-	cosProduse.insert({ p.getIdProdus(), Wrapper(p, cantitateProdus) });
+
+	if (cosProduse.count(p.getIdProdus()) == 0)
+	{
+		cosProduse.insert({ p.getIdProdus(), Wrapper(p, cantitateProdus) });
+	}
+	else if (cosProduse.find(p.getIdProdus())->second.getCantitateProdus() != 0)
+	{
+		cosProduse.find(p.getIdProdus())->second += cantitateProdus;
+
+	}
 }
 
-void Client::stergeProdusdinCos(Produs p)
-{
-	cosProduse.erase(p.getIdProdus());
-}
 
-void Client::stergeProdusdinCos(Produs p, int cantitateProdus)
+void Client::stergeProdusdinCos(int idProdus, int cantitateProdus)
 {		
 	map<int, Wrapper>::iterator itStergere;
-	itStergere = cosProduse.find(p.getIdProdus());
+	itStergere = cosProduse.find(idProdus);
 	itStergere->second.setCantitateProdus(cantitateProdus);
+}
+
+void Client::stergeProdusdinCos(int idProdus)
+{
+	cosProduse.erase(idProdus);
 }
 
 void Client::afiseazaCos()
@@ -48,4 +58,32 @@ vector<int> Client::produseinCos()
 Comanda Client::plaseazaComanda()
 {
 	return Comanda(username, cosProduse);
+}
+
+ostream& operator<<(ostream& iesire, Client& c)
+{
+	iesire << "Nume client: " << c.nume << endl;
+	iesire << "Prenume client: " << c.prenume << endl;
+	iesire << "Adresa client: " << c.adresa << endl;
+
+	return iesire;
+}
+
+Client Client::setDatePersonale(string nume, string prenume, string adresa)
+{
+	if (nume != "")
+	{
+		this->nume = nume;
+	}
+
+	if (prenume != "")
+	{
+		this->prenume = prenume;
+	}
+
+	if (adresa != "")
+	{
+		this->adresa = adresa;
+	}
+
 }

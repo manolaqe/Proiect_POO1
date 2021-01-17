@@ -22,15 +22,23 @@ public:
 
 	void adaugaProdusinCos(Produs, int);
 
-	void stergeProdusdinCos(Produs);
+	void stergeProdusdinCos(int idProdus);
 
-	void stergeProdusdinCos(Produs p, int cantitateProdus);
+	void stergeProdusdinCos(int idProdus, int cantitateProdus);
 
 	void afiseazaCos();
 
 	vector<int> produseinCos();
 
 	Comanda plaseazaComanda();
+
+	Client setDatePersonale(string nume, string prenume, string adresa);
+
+	void AfisareDatePersonale();
+	
+	friend ostream& operator<<(ostream& iesire, Client& c);
+	
+
 
 //	void raportComanda();
 
