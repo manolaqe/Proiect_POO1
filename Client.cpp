@@ -69,21 +69,28 @@ ostream& operator<<(ostream& iesire, Client& c)
 	return iesire;
 }
 
-Client Client::setDatePersonale(string nume, string prenume, string adresa)
+
+void Client::setNume(string nume)
 {
 	if (nume != "")
 	{
 		this->nume = nume;
 	}
+}
 
+void Client::setPrenume(string prenume)
+{
 	if (prenume != "")
 	{
 		this->prenume = prenume;
 	}
+}
+
+void Client::setAdresa(string adresa)
+{
 
 	if (adresa != "")
 	{
 		this->adresa = adresa;
 	}
-
 }

@@ -6,7 +6,7 @@
 #include "Client.h"
 #include "Produs.h"
 #include <iomanip>
-
+#include <string>
 
 using namespace std;
 Magazin magazin(1, "123");
@@ -312,17 +312,44 @@ int main()
 
 			case 8:
 			{
-				string nume = "";
-				string prenume = "";
-				string adresa = "";
+				cout << "0 Modificare nume" << endl;
+				cout << "1 Modificare prenume" << endl;
+				cout << "2 Modificare adresa" << endl;
 
+				switch (AlegeOptiune())
+				{
+				case 0:
+				{
+					string nume = "";
+					cout << "Nume client: " << endl;
+					cin >> nume;
+					client.setNume(nume);
+				}
+					break;
 
+				case 1:
+				{
+					string prenume = "";
+					cout << "Prenume client: " << endl;
+					cin >> prenume;
+					client.setPrenume(prenume);
+				}
+					break;
+
+				case 2:
+				{
+					string adresa = "";
+					cout << "Adresa client: " << endl;
+					cin.ignore();
+					getline(cin, adresa);
+				}
+					break;
+				}
+				cout << "Datele personale ale clientului au fost actualziate" << endl;
 			}
 				break;
 
 			}
-
-			
 			cout << "\n0 Intoarce-te la meniul principal" << endl;
 		} while (AlegeOptiune() == 0);
 	

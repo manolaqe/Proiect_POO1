@@ -32,7 +32,13 @@ public:
 
 	Comanda plaseazaComanda();
 
-	Client setDatePersonale(string nume, string prenume, string adresa);
+	void setNume(string nume);
+
+	void setPrenume(string prenume);
+
+	void setAdresa(string adresa);
+
+
 
 	void AfisareDatePersonale();
 	
