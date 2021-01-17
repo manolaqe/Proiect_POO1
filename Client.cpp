@@ -47,5 +47,5 @@ vector<int> Client::produseinCos()
 
 Comanda Client::plaseazaComanda()
 {
-	return Comanda(username, nume, prenume, adresa, cosProduse);
+	return Comanda(username, cosProduse);
 }

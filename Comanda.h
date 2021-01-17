@@ -9,18 +9,16 @@ class Comanda
 {
 public:
 	int idClient;
-	string numeDestinatar;
-	string prenumeDestinatar;
-	string adresaDestinatie;
 	Curieri curier;
-	float valoareComanda = 0;
 	map<int, Wrapper> produseComandate;
 
 public:
-	Comanda(int, string, string, string, map<int, Wrapper>);
-	void setCurier(Curieri);
+	Comanda(int, map<int, Wrapper>);
+	void setCurier(int c);
 	map<int, Wrapper> getProduseComandate();
 	friend ostream& operator<<(ostream& iesire, Comanda& c);
+	friend ifstream& operator>>(ifstream& in, Comanda& c);
+	friend ofstream& operator<<(ofstream& out, Comanda c);
 
 };
 

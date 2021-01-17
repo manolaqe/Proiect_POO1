@@ -1,10 +1,7 @@
 #include "Magazin.h"
 
 
-Magazin::Magazin(int username, string parola): Utilizator(username, parola)
-{
-	
-}
+Magazin::Magazin(int username, string parola) : Utilizator(username, parola) {}
 
 void Magazin::afiseazaProduse()
 {
@@ -62,10 +59,37 @@ void Magazin::plasareComanda(Comanda comanda)
 		itStoc->second.setCantitateProdus(itStoc->second.getCantitateProdus() - itCos->second.getCantitateProdus());
 	}
 
+	this->actualizareStoc();
 }
 
 void Magazin::afisareComenzi()
 {
 	for (int i = 0; i < comenziEfectuate.size(); i++)
 		cout << comenziEfectuate[i];
+}
+
+void Magazin::actualizareStoc()
+{
+	map<int, Wrapper>::iterator itStoc = stocProduse.begin();
+	ofstream dateStoc("dateStoc1.dat", ios::binary);
+	if (dateStoc.is_open()) {
+		for (itStoc = stocProduse.begin(); itStoc != stocProduse.end(); itStoc++)
+		{
+			//dateStoc << vectorWrapper[i];
+			dateStoc << itStoc->second;
+		}
+		dateStoc.close();
+	}
+}
+
+void Magazin::actualizareComenzi()
+{
+	ofstream dateStoc("dateComenzi.dat", ios::binary);
+	if (dateStoc.is_open()) {
+		for (int i = 0; i < comenziEfectuate.size(); i++)
+		{
+			dateStoc << comenziEfectuate[i];
+		}
+		dateStoc.close();
+	}
 }

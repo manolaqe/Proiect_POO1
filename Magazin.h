@@ -28,6 +28,12 @@ public:
 
 	void afisareComenzi();
 
+	void actualizareStoc();
+
+	void actualizareComenzi();
+
+
+
 //	void raportComenzi();
 };
 
