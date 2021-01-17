@@ -150,6 +150,7 @@
   <ItemGroup>
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Comanda.cpp" />
+    <ClCompile Include="Curieri.cpp" />
     <ClCompile Include="Magazin.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Produs.cpp" />

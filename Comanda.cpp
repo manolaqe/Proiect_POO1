@@ -4,15 +4,12 @@ Comanda::Comanda(int idClient, map<int, Wrapper> produseComandate)
 {
 	this->idClient = idClient;
 	this->produseComandate.insert(produseComandate.begin(), produseComandate.end());
-	//map<int, Wrapper>::iterator itInserare;
-	/*for (itInserare = produseComandate.begin(); itInserare != produseComandate.end(); itInserare++)
-		this->valoareComanda += itInserare->second.produs.getPretProdus() * itInserare->second.getCantitateProdus();*/
-	curier = Curieri::Default;
+	
 }
 
 void Comanda::setCurier(int c)
 {
-	curier = Curieri(c);
+	curier.setCurier(c);
 }
 
 map<int, Wrapper> Comanda::getProduseComandate()
@@ -33,37 +30,30 @@ ostream& operator<<(ostream& iesire, Comanda& c)
 		iesire << itAfisare->second;
 	}
 
-	iesire << ". Comanda va fi livrata cu ";
-
-	switch (c.curier)
-	{
-	case Curieri::Default: iesire << "Curier default";
-		break;
-	case Curieri::DPD: iesire << "DPD";
-		break;
-	case Curieri::FanCurier: iesire << "FanCurier";
-		break;
-	case Curieri::PostaRomana: iesire << "PostaRomana";
-		break;
-	case Curieri::UrgentCargus: iesire << "UrgentCargus";
-		break;
-	}
-
+	iesire << ". Comanda va fi livrata cu " << c.curier;
 
 	return iesire;
 }
 
 ifstream& operator>>(ifstream& in, Comanda& c)
 {
-	/*in.read((char*)&c.idClient, sizeof(int));
-	in.read((char*)&c.curier, sizeof(Curieri));
-	in.read((char*)&c.)
-	*/
+	in.read((char*)&c.idClient, sizeof(int));
+	in.read((char*)&c.curier.index, sizeof(int));
+	c.setCurier(c.curier.index);
+	map<int, Wrapper>::iterator itCitire;
+	for (itCitire = c.produseComandate.begin(); itCitire != c.produseComandate.end(); itCitire++)
+		in >> itCitire->second;
+	
 	return in;
 }
 
 ofstream& operator<<(ofstream& out, Comanda c)
 {
+	out.write((char*)&c.idClient, sizeof(int));
+	out.write((char*)&c.curier.index, sizeof(int));
+	map<int, Wrapper>::iterator itScriere;
+	for (itScriere = c.produseComandate.begin(); itScriere != c.produseComandate.end(); itScriere++)
+		out << itScriere->second;
 
 	return out;
 }
