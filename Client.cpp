@@ -16,6 +16,8 @@ bool Client::autentificare(int username, string parola)
 		cout << "Te-ai autentificat cu succes in modul client, " << this->prenume << " " << this->nume << "!" << endl;
 		return true;
 	}
+	else
+		return false;
 }
 
 void Client::adaugaProdusinCos(Produs p, int cantitateProdus)

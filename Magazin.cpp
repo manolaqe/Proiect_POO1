@@ -14,6 +14,8 @@ bool Magazin::autentificare(int username, string parola)
 		cout <<"V-ati autentificat cu succes in modul Magazin!" << endl;
 		return true;
 	}
+	else
+		return false;
 }
 
 void Magazin::afiseazaProduse()

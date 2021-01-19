@@ -29,7 +29,7 @@ int main()
 {
 	
 	Wrapper aux;
-	/*vector<Wrapper> vectorWrapper = {Wrapper(Produs(100, "Paine franzela", 1.0f), 5),
+	vector<Wrapper> vectorWrapper = {Wrapper(Produs(100, "Paine franzela", 1.0f), 5),
 		Wrapper(Produs(101, "Lapte 1L", 6.0f), 15), Wrapper(Produs(102, "Paine bagheta", 1.5f), 25), Wrapper(Produs(103, "Pate Ficat Porc 210g", 3.0f), 54),
 		Wrapper(Produs(104, "Ton 300g", 14.0f), 34), Wrapper(Produs(105, "Lamai 1kg", 5.0f), 21), Wrapper(Produs(106, "File de somon 1kg", 30.0f), 12),
 		Wrapper(Produs(107, "Rosii 1kg", 3.0f), 60), Wrapper(Produs(108, "Castraveti 1kg", 2.0f), 50), Wrapper(Produs(109, "Pui 1kg", 20.0f), 32), 
@@ -46,7 +46,7 @@ int main()
 			dateStoc << vectorWrapper[i];
 		}
 		dateStoc.close();
-	}*/
+	}
 
 	
 
