@@ -22,7 +22,6 @@ public:
 	void setNumeProdus(const char* numeProdus);
 	void setPretProdus(float pretProdus);
 
-	~Produs();
 
 
 };

@@ -62,8 +62,3 @@ void Produs::setPretProdus(float pretProdus)
 {
 	this->pretProdus = pretProdus;
 }
-
-Produs::~Produs()
-{
-	//delete[] numeProdus;
-}
